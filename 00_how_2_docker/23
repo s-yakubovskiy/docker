@@ -1,0 +1,14 @@
+23. Create an overlay-type internal network that you will name overmind.
+
+
+
+
+24. Launch a rabbitmq SERVICE that will be named orbital-command. You should
+define a specific user and password for the RabbitMQ service, they can be whatever
+you want. This service will be on the overmind network.
+
+25. List all the services of the local swarm.
+
+26. Launch a 42school/engineering-bay service in two replicas and make sure that
+the service works properly (see the documentation provided at hub.docker.com).
+This service will be named engineering-bay and will be on the overmind network.

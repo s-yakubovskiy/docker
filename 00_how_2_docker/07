@@ -1,0 +1,1 @@
+docker inspect overlord | grep -w "\"IPAddress" | grep -oEw "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" | tail -1
