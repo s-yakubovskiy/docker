@@ -1,0 +1,2 @@
+docker run -d --name overlord --restart always 5000:80 nginx
+docker container restart overlord

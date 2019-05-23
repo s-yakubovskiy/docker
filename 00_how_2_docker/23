@@ -1,14 +1,15 @@
-23. Create an overlay-type internal network that you will name overmind.
+#!/bin/bash
+# Create an overlay-type internal network that you will name overmind.
+
+#set env to docker manager
+eval $(docker-machine env char)
+docker network create --driver overlay --attachable overmind
 
 
+#short info:
+#before creating an overlay type network you should make a swarm. 
+# And if you wanna to get overlay networks which works not only with swarm nodes, 
+# you should add --attachable command when creating a network/
 
-
-24. Launch a rabbitmq SERVICE that will be named orbital-command. You should
-define a specific user and password for the RabbitMQ service, they can be whatever
-you want. This service will be on the overmind network.
-
-25. List all the services of the local swarm.
-
-26. Launch a 42school/engineering-bay service in two replicas and make sure that
-the service works properly (see the documentation provided at hub.docker.com).
-This service will be named engineering-bay and will be on the overmind network.
+# docker-machine ssh char
+# sudo -i

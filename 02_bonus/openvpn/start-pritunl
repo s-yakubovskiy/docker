@@ -1,0 +1,35 @@
+#!/bin/sh
+set -e
+
+[ -d /dev/net ] ||
+    mkdir -p /dev/net
+[ -c /dev/net/tun ] ||
+    mknod /dev/net/tun c 10 200
+
+touch /var/log/pritunl.log
+touch /var/run/pritunl.pid
+/bin/rm /var/run/pritunl.pid
+
+## start a local mongodb instance if no mongodb specified through env
+if [ -z "$MONGODB_URI" ]; then
+  /usr/bin/mongod -f /etc/mongod.conf &
+  sleep 70 ## for mongo to allocate journals
+  MONGODB_URI="mongodb://localhost:27017/pritunl"
+fi
+
+cat << EOF > /etc/pritunl.conf
+{
+    "debug": false,
+    "bind_addr": "0.0.0.0",
+    "port": 9700,
+    "static_cache": true,
+    "www_path": "/usr/share/pritunl/www",
+    "log_path": "/var/log/pritunl.log",
+    "temp_path": "/tmp/pritunl_%r",
+    "local_address_interface": "auto",
+    "mongodb_uri": "$MONGODB_URI"
+}
+EOF
+
+/usr/bin/pritunl start &
+[ "$1" ] && exec "$@"

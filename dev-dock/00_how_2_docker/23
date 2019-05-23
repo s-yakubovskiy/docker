@@ -1,0 +1,7 @@
+# 23. Create an overlay-type internal network that you will name overmind.
+#before creating an overlay type network you should make a swarm. And if you wanna to get overlay networks which works not only with swarm nodes, you should add --attachable command when creating a network/
+
+#set env to docker manager
+docker-machine ssh char
+sudo -i
+docker network create --driver overlay --attachable overmind

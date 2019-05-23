@@ -1,0 +1,14 @@
+#!/bin/bash
+# Get the real-time logs of one the tasks of the engineering-bay service.
+
+docker service create \
+	-d \
+	--name marines \
+	--network=overmind \
+	-e OC_USERNAME=yharwyn- \
+	-e OC_PASSWD=hello \
+	--replicas 2 \
+	42school/marine-squad
+
+
+

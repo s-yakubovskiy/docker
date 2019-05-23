@@ -1,0 +1,16 @@
+#!/bin/bash
+# Launch a 42school/engineering-bay service in two replicas
+
+# OC_USERNAME : Username used to access to orbital-command
+# OC_PASSWD : Password used to access to orbital-command
+
+docker service create \
+	-d \
+	--name engineering-bay \
+	--network=overmind \
+	-e OC_USERNAME=yharwyn- \
+	-e OC_PASSWD=hello \
+	--replicas 2 \
+	42school/engineering-bay
+
+# to check working correctly use : docker service logs <name>

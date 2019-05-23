@@ -1,1 +1,3 @@
+#!/bin/bash
+# list volumes
 docker volume ls

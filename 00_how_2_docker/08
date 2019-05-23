@@ -1,1 +1,3 @@
+#!/bin/bash
+#run docker alpine based container in interactive mode
 docker run -it --rm alpine

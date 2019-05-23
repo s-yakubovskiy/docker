@@ -1,0 +1,16 @@
+# 26. Launch a 42school/engineering-bay service in two replicas and make sure that the service works properly (see the documentation provided at hub.docker.com). This service will be named engineering-bay and will be on the overmind network.
+
+OC_USERNAME : Username used to access to orbital-command
+OC_PASSWD : Password used to access to orbital-command
+
+docker service create \
+-d \
+--name engineering-bay \
+--network=overmind \
+-e OC_USERNAME=yharwyn- \
+-e OC_PASSWD=hello \
+--replicas 2 \
+42school/engineering-bay
+
+# to check working correctly use : docker service logs <name>
+# engineering-bay.1.cwj1txi9ap23@Aiur    |  Zerg #05-14 from Hatchery 06ccd7578796 : Bwaaaaarghfnle (I'm attacking this building!)

@@ -1,0 +1,3 @@
+27. Get the real-time logs of one the tasks of the engineering-bay service.
+
+docker service logs --follow $(docker service ps engineering-bay | tail -n 1 | cut -d ' ' -f 1)

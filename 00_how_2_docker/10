@@ -1,1 +1,3 @@
+#!/bin/bash
+# create volume
 docker volume create hatchery

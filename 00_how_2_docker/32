@@ -1,0 +1,11 @@
+#!/bin/bash
+# Force quit and delete all the containers on the local swarm, in one command.
+
+docker rm --force $(docker ps -a -q)
+
+
+
+
+
+
+

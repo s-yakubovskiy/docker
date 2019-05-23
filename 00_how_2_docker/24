@@ -1,0 +1,10 @@
+#!/bin/bash
+# Launch a rabbitmq SERVICE that will be named orbital-command. You should
+
+docker service create \
+	-d \
+	--name orbital-command \
+	--network=overmind \
+	-e RABBITMQ_DEFAULT_USER=yharwyn- \
+	-e RABBITMQ_DEFAULT_PASS=hello \
+	rabbitmq

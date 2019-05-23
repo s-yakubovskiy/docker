@@ -1,1 +1,3 @@
+#!/bin/bash
+#pulling up image but not run it
 docker pull hello-world

@@ -1,0 +1,4 @@
+# docker -it --name debby debian /bin/sh
+apt update && apt upgrade
+apt install -y gcc git
+# build-essential

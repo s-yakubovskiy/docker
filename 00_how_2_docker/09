@@ -1,4 +1,6 @@
-# docker -it --name debby debian /bin/sh
-apt update && apt upgrade
-apt install -y gcc git
+#!/bin/bash
+# run the debian container first
+docker run -it -d --rm --name debby debian bash
+docker exec debby apt update -y && docker exec debby apt install -y gcc git
+# docker stop debby afterwards
 # build-essential

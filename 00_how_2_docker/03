@@ -1,1 +1,3 @@
+#!/bin/bash
+#exporting to environment with eval
 eval $(docker-machine env Char)

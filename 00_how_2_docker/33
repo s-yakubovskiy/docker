@@ -1,0 +1,4 @@
+#!/bin/bash
+# Images prune. Hard way.
+
+docker rmi --force $(docker image ls -a -q)

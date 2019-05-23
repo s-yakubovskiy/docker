@@ -1,0 +1,4 @@
+#25. List all the services of the local swarm.
+#switch to swarm manager and do
+
+docker service ls

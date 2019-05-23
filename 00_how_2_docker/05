@@ -1,1 +1,3 @@
+#!/bin/bash
+#run the hello world image (no paramaters)
 docker run hello-world

@@ -1,2 +1,4 @@
+#!/bin/bash
+# get environments of content
 docker exec spawning-pool env
 # docker inspect --format '{{ .Config.Env }}' spawning-pool
